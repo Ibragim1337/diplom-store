@@ -4,7 +4,8 @@ import styles from '../../styles/Header.module.css';
 import LOGO from '../../images/logo.svg';
 import AVATAR from '../../images/avatar.jpg';
 import ICON from '../../images/searchIcon.svg';
-import HEART from '../../images/heart.svg'
+import HEART from '../../images/heart.svg';
+import CART from '../../images/cart.svg';
 
 
 import { Link } from "react-router-dom";
@@ -48,14 +49,19 @@ const Header = () => {
           value=''/>
         </div>
 
-        <div className={styles.box}>
-
-
-        </div>
+        <div className={styles.box}></div>
         </form>
+
+        
         <div className={styles.account}>
-          <Link to={ROUTES.HOME}>
-            <img src={HEART} alt="heart logo" />
+          <Link to={ROUTES.HOME} className={styles.favorites}>
+            <img src={HEART} alt="heart logo" className={styles.heart}/>
+          </Link>
+
+          <Link to={ROUTES.CART} className={styles.cart}>
+            <img src={CART} alt="heart logo" className={styles.cartLogo}/>
+
+            <span className={styles.count}>2</span>
           </Link>
           
         </div>
