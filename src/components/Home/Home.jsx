@@ -6,7 +6,7 @@ import Categories from "../Categories/Categories";
 
 const Home = () => {
 
-  const { products, categories } = useSelector(({ state }) => state);
+  const { products, categories } = useSelector(( state ) => state);
 
   return (
     <>
