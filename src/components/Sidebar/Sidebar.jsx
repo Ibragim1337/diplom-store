@@ -8,18 +8,20 @@ const Sidebar = () => {
 
   const { list } = useSelector(({ categories }) => categories);
 
-  console.log('list', list);
+
 
   return (
     <section className={styles.sidebar}>
       <div className={styles.title}> CATEGORIES</div>
       <nav>
         <ul className={styles.menu}>
-          <li>
-            <NavLink to={`/categories/${1}`}>
-              Link
+          {list.map(({id, name }) => (
+            <li key={id}>
+            <NavLink to={`/categories/${id}`}>
+             {name}
             </NavLink>
           </li>
+          ))}
 
         </ul>
       </nav>
