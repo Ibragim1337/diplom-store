@@ -1,0 +1,40 @@
+.sidebar {
+  width: 304px;
+  padding: 24px;
+  height: 423px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.menu {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.link {
+  color:#576067;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: capitalize;
+}
+
+.link:hover {
+  color: #fff;
+}
+
+.link.active {
+  color: #8b57c6;
+}
+
+.footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+}
