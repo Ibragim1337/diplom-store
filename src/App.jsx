@@ -8,13 +8,17 @@ import Sidebar from "./components/Sidebar/Sidebar";
 
 
 import { useDispatch } from "react-redux";
+
+
 import { getCatigories } from "./features/categories/categoriesSlice";
+import { getProducts } from "./features/products/productSlice";
 
 const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCatigories())
+    dispatch(getCatigories());
+    dispatch(getProducts());
   }, [dispatch])
 
   return (
