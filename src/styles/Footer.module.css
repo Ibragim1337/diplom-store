@@ -1,0 +1,29 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 24px;
+}
+
+.logo {
+  width: 61px;
+}
+
+
+.rights {
+  color: #576067;
+  font-size: 12px;
+  line-height: 15px;
+}
+
+.socials {
+  display: flex;
+  gap: 15px;
+}
+
+.socials img {
+  width: 24px;
+  height: 24px;
+  fill: #576067;
+}

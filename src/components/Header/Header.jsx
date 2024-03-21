@@ -49,7 +49,7 @@ const Header = () => {
           value=''/>
         </div>
 
-        <div className={styles.box}></div>
+        {false && <div className={styles.box}></div>}
         </form>
 
         

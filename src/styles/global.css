@@ -3,5 +3,33 @@
 }
 
 body {
-  background-color: #212123;
+  background: #212123;
+  font-size: 16px;
+  line-height: 16px;
+  font-family: Montserrat, Roboto, sans-serif;
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  color: #fff;
+  font-weight: 500;
+  padding-bottom: 20px;
+}
+
+input {
+  border: none;
+  background: none;
+  outline: none;
+  color: #fff;
+  font-size: 16px;
+  font-family: Montserrat, Roboto, sans-serif;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+section {
+  background: #191919;
+  border-radius: 6px;
 }
