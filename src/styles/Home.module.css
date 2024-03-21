@@ -1,0 +1,50 @@
+.home {
+  position: relative;
+  flex-grow: 1;
+}
+
+.title {
+  font-weight: 900;
+  font-size: 119px;
+  line-height: 145px;
+  text-transform: uppercase;
+  color: #212123;
+  text-align: center;
+}
+
+.product {
+  position: relative;
+  padding-left: 42px;
+  display: flex;
+  align-items: stretch;
+  margin-top: 9px;
+}
+
+.subtitles {
+  line-height: 20px;
+  text-transform: uppercase;
+  color: #616e74;
+}
+
+.head {
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 51px;
+  text-transform: uppercase;
+  color: #f6f6f7;
+  max-width: 500px;
+  margin: 10px 0 24px 0;
+}
+
+.imageContainer {
+  position: relative;
+  flex-grow: 1;
+  height: 250px;
+}
+
+.imageContainer img {
+  position: absolute;
+  bottom: -15%;
+  right: 10%;
+  max-width: unset;
+}
