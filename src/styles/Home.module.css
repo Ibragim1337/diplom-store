@@ -88,6 +88,12 @@
   text-align: center;
 }
 
+.content span {
+  line-height: 183px;
+  font-size: 150px;
+  display: block;
+}
+
 .more {
   margin-top: 27px;
 }
@@ -95,12 +101,6 @@
 .right {
   width: 50%;
   position: relative;
-}
-
-.content span {
-  line-height: 183px;
-  font-size: 150px;
-  display: block;
 }
 
 .discount {
@@ -116,6 +116,6 @@
 }
 
 .discount span {
-  color: var(--violet);
+  color: #8b57c6;
   font-weight: 700;
 }
