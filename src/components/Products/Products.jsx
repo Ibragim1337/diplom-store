@@ -22,7 +22,7 @@ const Products = ({title, style={}, products = [], amount}) => {
             <div className={styles.info}>
               <div className={styles.prices}>
                 <div className={styles.price}>{price}$</div>
-                <div className={styles.oldPrice}>{Math.floor(price * 0.8)}$
+                <div className={styles.oldPrice}>{Math.floor(price * 1.2)}$
                 </div>
               </div>
 
