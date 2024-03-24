@@ -13,7 +13,7 @@ const Sidebar = () => {
       <nav>
         <ul className={styles.menu}>
           {list.map(({ id, name }) => {
-            if (id > 8) return null; // Остановить выполнение map(), если id больше 5
+            if (id > 22) return null; 
             return (
               <li key={id}>
                 <NavLink
