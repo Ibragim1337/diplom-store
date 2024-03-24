@@ -2,13 +2,23 @@ import React, { useEffect, useState } from "react";
 import styles from "../../styles/Product.module.css";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../../features/user/userSlice";
 
 const SIZES = [ 7.5, 8, 11];
 
-const Product = ({ title, price, images, description }) => {
+const Product = ( item ) => {
+
+  const { title, price, images, description } = item;
 
   const [currentImage, setCurrentImage] = useState();
   const [currentSize, setCurrentSize] = useState();
+
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    dispatch(addItemToCart(item))
+  }
 
   useEffect(() => {
     if(!images.length) return;
@@ -58,13 +68,13 @@ const Product = ({ title, price, images, description }) => {
           <p className={styles.description}>{description}</p>
 
           <div className={styles.actions}>
-            <button className={styles.add} disabled={!currentSize}>Add to cart</button>
+            <button className={styles.add} disabled={!currentSize} onClick={addToCart}>Add to cart</button>
             <button className={styles.favorite}>Add to favorite</button>
           </div>
           <div className={styles.bottom}>
             <div className={styles.purchase}> 12 people purchased</div>
 
-              <Link to={ROUTES.HOME}>Return to store</Link>
+              <Link to={ROUTES.HOME} >Return to store</Link>
 
           </div>
 

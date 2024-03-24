@@ -3,8 +3,15 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useGetProductQuery } from "../../features/api/apiSlice";
 import { ROUTES } from "../../utils/routes";
 import Product from "./Product";
+import Products from "./Products"
+import { useDispatch, useSelector } from "react-redux";
+import { getRelatedProducts } from "../../features/products/productSlice";
 
 const SingleProduct = () => {
+
+  const { related } = useSelector(({ products }) => products)
+
+  const dispatch = useDispatch();
 
   const { id } = useParams();
 
@@ -16,7 +23,13 @@ const SingleProduct = () => {
     if(!isFetching && !isLoading && !isSuccess){
       navigate(ROUTES.HOME)
     }
-  }, [isLoading, isFetching, isSuccess])
+  }, [isLoading, isFetching, isSuccess]);
+
+  useEffect(() => {
+    if(data) {
+      dispatch(getRelatedProducts(data.category.id))
+    }
+  }, [data])
 
 
 
@@ -25,6 +38,7 @@ const SingleProduct = () => {
   ) : (
     <div>
       <Product {...data} />
+      <Products products={related} amount={5} title='Related Products'/>
     </div>
   )
 
