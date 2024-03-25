@@ -15,18 +15,16 @@ const UserForm = () => {
 
 
 
-  return (
-    showForm ? (
-      <>
-      <div className={styles.overlay} onClick={closeForm}/>
-      {formType === 'signup' ? (
-        <UserSignupForm toggleCurrentFormType={toggleCurrentFormType} closeForm={closeForm} />
-      ) : (
-        <UserLoginForm toggleCurrentFormType={toggleCurrentFormType} closeForm={closeForm}/>
-      )}
-      </>
-    ) : (<></>)
-    )
+  return showForm ? (
+    <>
+    <div className={styles.overlay} onClick={closeForm}/>
+    {formType === 'signup' ? (
+      <UserSignupForm toggleCurrentFormType={toggleCurrentFormType} closeForm={closeForm} />
+    ) : (
+      <UserLoginForm toggleCurrentFormType={toggleCurrentFormType} closeForm={closeForm}/>
+    )}
+    </>
+  ) : (<></>)
 };
 
 export default UserForm;
