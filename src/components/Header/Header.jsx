@@ -8,13 +8,15 @@ import HEART from '../../images/heart.svg';
 import CART from '../../images/cart.svg';
 
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleForm } from '../../features/user/userSlice';
 
 const Header = () => {
   const dispatch = useDispatch();
+
+  const navigate = useNavigate();
 
   const { currnetUser } = useSelector(({ user }) => user);
 
@@ -27,7 +29,8 @@ const Header = () => {
   }, [currnetUser])
 
   const handleClick = () => {
-    if(!currnetUser) dispatch(toggleForm(true))
+    if(!currnetUser) dispatch(toggleForm(true));
+    else navigate(ROUTES.PROFILE)
 
   }
 

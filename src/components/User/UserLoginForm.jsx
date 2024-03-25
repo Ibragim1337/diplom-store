@@ -62,9 +62,12 @@ const UserLoginForm = ({ toggleCurrentFormType, closeForm }) => {
             required/>
           </div>
 
-          <div className={styles.link} onClick={() => toggleCurrentFormType('signup')}>
-            Create an account
-          </div>
+          <div
+          onClick={() => toggleCurrentFormType("signup")}
+          className={styles.link}
+        >
+          Create an account
+        </div>
 
           <button type="submit"
           className={styles.submit}>
