@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import styles from '../../styles/Header.module.css';
 import LOGO from '../../images/logo.svg';
@@ -17,6 +17,14 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const { currnetUser } = useSelector(({ user }) => user);
+
+  const [values, setValues] = useState({ name: 'Guest', avatar: AVATAR});
+
+  useEffect(() => {
+    if(!currnetUser) return;
+
+    setValues(currnetUser);
+  }, [currnetUser])
 
   const handleClick = () => {
     if(!currnetUser) dispatch(toggleForm(true))
@@ -38,7 +46,7 @@ const Header = () => {
          className={styles.avatar}
          style={{ backgroundImage: `url(${AVATAR})` }}
           />
-          <div className={styles.username}>Guest</div>
+          <div className={styles.username}>{values.name}</div>
         </div>
 
         <form className={styles.form}>
