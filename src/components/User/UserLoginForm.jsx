@@ -4,13 +4,12 @@ import styles from '../../styles/User.module.css';
 
 import CLOSE from '../../images/x-symbol-svgrepo-com.svg';
 import { useDispatch } from "react-redux";
-import { createUser } from "../../features/user/userSlice";
+import { loginUser } from "../../features/user/userSlice";
 
-const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
+const UserLoginForm = ({ toggleCurrentFormType, closeForm }) => {
   const dispatch = useDispatch();
 
   const [values, setValues] = useState({
-    name:'',
     email: '',
     password: ''
   });
@@ -26,7 +25,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
 
     if(isEmpty) return;
 
-    dispatch(createUser(values));
+    dispatch(loginUser(values));
     closeForm();
   } 
 
@@ -37,7 +36,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
         </div>
 
         <div className={styles.title}>
-          Sign Up
+          Log in
         </div>
 
         <form action="" className={styles.form} onSubmit={handleSubmit}>
@@ -54,17 +53,6 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
 
           <div className={styles.group}>
             <input 
-            type="text" 
-            name="name" 
-            placeholder="Your name" 
-            value={values.name}  
-            autoComplete="off" 
-            onChange={handleChange}
-            required/>
-          </div>
-
-          <div className={styles.group}>
-            <input 
             type="password" 
             name="password" 
             placeholder="Your password" 
@@ -74,17 +62,17 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
             required/>
           </div>
 
-          <div className={styles.link} onClick={() => toggleCurrentFormType('login')}>
-            I already have an account
+          <div className={styles.link} onClick={() => toggleCurrentFormType('signup')}>
+            Create an account
           </div>
 
           <button type="submit"
           className={styles.submit}>
-            Create an account
+            Log in
           </button>
         </form>
       </div>
     )
 }
 
-export default UserSignupForm;
+export default UserLoginForm;
