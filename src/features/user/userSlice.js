@@ -3,21 +3,21 @@ import axios from "axios";
 import { BASE_URL } from "../../utils/constatns";
 
 
-// export const getCatigories = createAsyncThunk('categories/getCategories', async (_, thunkAPI) => {
-//   try{
-//     const res = await axios(`${BASE_URL}/categories`);
-//     return res.data;
-//   } catch (err){
-//     console.log(err);
-//     return thunkAPI.rejectWithValue(err);
-//   }
-// }
-// )
+export const createUser = createAsyncThunk('users/createUser', async (payload, thunkAPI) => {
+  try{
+    const res = await axios.post(`${BASE_URL}/users`, payload);
+    return res.data;
+  } catch (err){
+    console.log(err);
+    return thunkAPI.rejectWithValue(err);
+  }
+}
+)
 
 const userSlice = createSlice({
   name: 'user',
   initialState: {
-    currnetUser:[],
+    currnetUser:{},
     cart:[],
     isLoading: false
   },
@@ -41,8 +41,13 @@ const userSlice = createSlice({
         state.favorites.push(payload);
       }
     },
-     
   },
+  extraReducers: (builder) => {
+    builder.addCase(createUser.fulfilled, (state, { payload }) => {
+      state.currnetUser = payload;
+    });
+  },
+  
 })
 
 export const { addItemToCart, addItemToFavorites } = userSlice.actions;
