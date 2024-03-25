@@ -12,8 +12,8 @@ const Sidebar = () => {
       <div className={styles.title}> CATEGORIES</div>
       <nav>
         <ul className={styles.menu}>
-          {list.map(({ id, name }) => {
-            if (id > 22) return null; 
+        {list.map(({ id, name }) => {
+            if (id > 6) return null; 
             return (
               <li key={id}>
                 <NavLink

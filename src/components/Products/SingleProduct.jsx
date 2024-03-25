@@ -9,7 +9,7 @@ import { getRelatedProducts } from "../../features/products/productSlice";
 
 const SingleProduct = () => {
 
-  const { related } = useSelector(({ products }) => products)
+  const { list,  related } = useSelector(({ products }) => products)
 
   const dispatch = useDispatch();
 
@@ -26,6 +26,7 @@ const SingleProduct = () => {
   }, [isLoading, isFetching, isSuccess]);
 
   useEffect(() => {
+    // if(!data || list.length) return;
     if(data) {
       dispatch(getRelatedProducts(data.category.id))
     }

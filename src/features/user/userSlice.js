@@ -34,22 +34,17 @@ const userSlice = createSlice({
 
       state.cart = newCart;
      },
+     addItemToFavorites: (state, { payload }) => {
+      const found = state.favorites.find(({ id }) => id === payload.id);
+    
+      if (!found) {
+        state.favorites.push(payload);
+      }
+    },
+     
   },
-  // extraReducers: (builder) => {
-  //   builder.addCase(getCatigories.pending, (state) => {
-  //     state.isLoading = true;
-  //   });
-  //   builder.addCase(getCatigories.fulfilled, (state, { payload }) => {
-  //     state.list = payload;
-  //     state.isLoading = false;
-  //   });
-  //   builder.addCase(getCatigories.rejected, (state) => {
-  //     state.isLoading = false;
-  //     console.log('Error!');
-  //   });
-  // },
 })
 
-export const { addItemToCart } = userSlice.actions;
+export const { addItemToCart, addItemToFavorites } = userSlice.actions;
 
 export default userSlice.reducer;
