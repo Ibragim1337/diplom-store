@@ -4,7 +4,7 @@ import styles from '../../styles/User.module.css';
 
 import CLOSE from '../../images/x-symbol-svgrepo-com.svg';
 
-const UserSignupForm = () => {
+const UserSignupForm = ({ closeForm }) => {
 
   const [values, setValues] = useState({
     name:'',
@@ -12,13 +12,21 @@ const UserSignupForm = () => {
     password: ''
   });
 
-  const handleChange= ({ target: {value, name}}) => {
+  const handleChange = ({ target: {value, name}}) => {
     setValues({ ...values, [name]: value})
   }
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const isEmpty = Object.values(values).every(val=>val);
+
+    if(isEmpty) return;
+  } 
+
     return(
       <div className={styles.wrapper}>
-        <div className={styles.close}>
+        <div className={styles.close} onClick={closeForm}>
           <img src={CLOSE} />
         </div>
 
