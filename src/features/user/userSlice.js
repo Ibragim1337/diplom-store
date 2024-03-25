@@ -17,9 +17,11 @@ export const createUser = createAsyncThunk('users/createUser', async (payload, t
 const userSlice = createSlice({
   name: 'user',
   initialState: {
-    currnetUser:{},
+    currnetUser: null,
     cart:[],
-    isLoading: false
+    isLoading: false,
+    formType:'sign up',
+    showForm: false
   },
   reducers: {
     addItemToCart: (state, { payload }) => {
@@ -41,6 +43,9 @@ const userSlice = createSlice({
         state.favorites.push(payload);
       }
     },
+    toggleForm: (state, { payload }) => {
+      state.showForm = payload;
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(createUser.fulfilled, (state, { payload }) => {
@@ -50,6 +55,6 @@ const userSlice = createSlice({
   
 })
 
-export const { addItemToCart, addItemToFavorites } = userSlice.actions;
+export const { addItemToCart, addItemToFavorites, toggleForm } = userSlice.actions;
 
 export default userSlice.reducer;

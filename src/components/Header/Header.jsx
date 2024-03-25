@@ -10,8 +10,19 @@ import CART from '../../images/cart.svg';
 
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleForm } from '../../features/user/userSlice';
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const { currnetUser } = useSelector(({ user }) => user);
+
+  const handleClick = () => {
+    if(!currnetUser) dispatch(toggleForm(true))
+
+  }
+
   return (
     <div className={styles.header}>
       
@@ -22,7 +33,7 @@ const Header = () => {
       </div>
 
       <div className={styles.information}>
-        <div className={styles.user}>
+        <div className={styles.user} onClick={handleClick}>
          <div 
          className={styles.avatar}
          style={{ backgroundImage: `url(${AVATAR})` }}
