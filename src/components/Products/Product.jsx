@@ -33,13 +33,13 @@ const Product = ( item ) => {
           className={styles.current}
           style={{ backgroundImage: `url(${currentImage})` }}
         />
-        <div className={styles['images-list']}>
-        {images.map((images, index) => {
+        <div className={styles.imagelist}>
+        {images.map((image, i) => {
           <div
-            key={index}
-            className={styles.current}
-            style={{ backgroundImage: `url(${images})` }}
-            onClick={() => setCurrentImage(images)}
+            key={i}
+            className={styles.image}
+            style={{ backgroundImage: `url(${image})` }}
+            onClick={() => setCurrentImage(image)}
           />
         })}
         </div>

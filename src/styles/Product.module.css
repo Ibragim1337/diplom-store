@@ -27,7 +27,7 @@
   border-radius: 6px;
 }
 
-.images-list {
+.imageslist {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
