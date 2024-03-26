@@ -19,7 +19,7 @@ const Header = () => {
 
   const navigate = useNavigate();
 
-  const { currnetUser } = useSelector(({ user }) => user);
+  const { currnetUser, cart } = useSelector(({ user }) => user);
 
   const [searchValue, setSearchValue] = useState('');
 
@@ -112,7 +112,7 @@ const Header = () => {
           <Link to={ROUTES.CART} className={styles.cart}>
             <img src={CART} alt="heart logo" className={styles.cartLogo}/>
 
-            <span className={styles.count}>2</span>
+            {!!cart.length && <span className={styles.count}>{cart.length}</span>}
           </Link>
           
         </div>
