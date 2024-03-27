@@ -16,31 +16,29 @@ import { useGetProductsQuery } from "../../features/api/apiSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
-
   const navigate = useNavigate();
 
-  const { currnetUser, cart } = useSelector(({ user }) => user);
+  const [searchValue, setSearchValue] = useState("");
+  const { currentUser, cart } = useSelector(({ user }) => user);
 
-  const [searchValue, setSearchValue] = useState('');
+  const [values, setValues] = useState({ name: "Guest", avatar: AVATAR });
 
-  const [values, setValues] = useState({ name: 'Guest', avatar: AVATAR});
-
-  const {data, isLoading} = useGetProductsQuery({title: searchValue })
+  const { data, isLoading } = useGetProductsQuery({ title: searchValue });
 
   useEffect(() => {
-    if(!currnetUser) return;
+    if (!currentUser) return;
 
-    setValues(currnetUser);
-  }, [currnetUser])
+    setValues(currentUser);
+  }, [currentUser]);
 
   const handleClick = () => {
-    if(!currnetUser) dispatch(toggleForm(true));
-    else navigate(ROUTES.PROFILE)
-  }
+    if (!currentUser) dispatch(toggleForm(true));
+    else navigate(ROUTES.PROFILE);
+  };
 
   const handleSearch = ({ target: { value } }) => {
-    setSearchValue(value)
-  }
+    setSearchValue(value);
+  };
 
   return (
     <div className={styles.header}>
