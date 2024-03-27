@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   background: #212123;
   font-size: 16px;
@@ -28,21 +29,6 @@ p {
   line-height: 24px;
 }
 
-h2 {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 24px;
-  text-align: center;
-}
-
-
-ul,
-li {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
 img {
   max-width: 100%;
   height: auto;
@@ -58,27 +44,30 @@ button {
   font-family: Montserrat, Roboto, sans-serif;
 }
 
-input {
-  padding: 0;
-}
-
-button {
-  background: #6c3eb8;
-  border-radius: 6px;
-  padding: 9px 20px;
-  font-weight: 600;
-  line-height: 20px;
-  cursor: pointer;
-}
-
 a {
   color: #fff;
   text-decoration: none;
 }
 
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
 .app {
   width: 1274px;
   margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-center {
+  align-items: center;
+  justify-content: center;
 }
 
 .icon {
@@ -95,4 +84,36 @@ a {
 section {
   background: #191919;
   border-radius: 6px;
+}
+
+button {
+  background: #6c3eb8;
+  border-radius: 6px;
+  padding: 9px 20px;
+  font-weight: 600;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #8b57c6;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+}
+
+input {
+  padding: 0;
+}
+
+.preloader {
+  flex-grow: 1;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

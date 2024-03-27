@@ -1,11 +1,10 @@
 .product {
   display: flex;
   flex-grow: 1;
-  width: 100%;
+  max-width: calc(100% - 324px);
   padding: 24px;
   column-gap: 32px;
-  color: #f6f6f7;
-  margin-bottom: 20px;
+  color: var(--light);
 }
 
 .info {
@@ -74,33 +73,32 @@
 .sizes span {
   font-size: 14px;
   line-height: 17px;
-  color: #576067;
+  color: var(--dark-sea);
 }
 
 .list {
   display: flex;
   align-items: center;
   column-gap: 5px;
-} 
+}
 
 .size {
   padding: 4px 8px;
   border-radius: 8px;
-  background: #212123;
+  background: var(--bg);
   cursor: pointer;
 }
 
 .size:hover,
 .size.active {
-  background: #8b57c6;
+  background: var(--violet);
 }
-
 
 .description {
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
-  color: #b8b8b8;
+  color: var(--grey);
 }
 
 .actions {
@@ -110,7 +108,7 @@
 }
 
 .favourite {
-  background: #576067;
+  background: var(--dark-sea);
   border-radius: 6px;
 }
 
@@ -124,11 +122,11 @@
   justify-content: space-between;
   font-size: 10px;
   line-height: 12px;
-  color: #576067;
+  color: var(--dark-sea);
   margin-top: auto;
 }
 
 .add:disabled {
   cursor: not-allowed;
-  background: #212123;
+  background: var(--bg);
 }

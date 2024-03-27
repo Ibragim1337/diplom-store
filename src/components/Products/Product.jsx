@@ -3,7 +3,7 @@ import styles from "../../styles/Product.module.css";
 import { Link } from "react-router-dom";
 import { ROUTES } from "../../utils/routes";
 import { useDispatch } from "react-redux";
-import { addItemToCart, addItemToFavorites } from "../../features/user/userSlice";
+import { addItemToCart } from "../../features/user/userSlice";
 
 const SIZES = [ 7.5, 8, 11];
 
