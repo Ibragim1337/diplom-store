@@ -8,41 +8,33 @@ import { useDispatch, useSelector } from "react-redux";
 import { getRelatedProducts } from "../../features/products/productSlice";
 
 const SingleProduct = () => {
-
-  const { list,  related } = useSelector(({ products }) => products)
-
   const dispatch = useDispatch();
-
   const { id } = useParams();
-
   const navigate = useNavigate();
+  const { list, related } = useSelector(({ products }) => products);
 
   const { data, isLoading, isFetching, isSuccess } = useGetProductQuery({ id });
 
   useEffect(() => {
-    if(!isFetching && !isLoading && !isSuccess){
-      navigate(ROUTES.HOME)
+    if (!isFetching && !isLoading && !isSuccess) {
+      navigate(ROUTES.HOME);
     }
   }, [isLoading, isFetching, isSuccess]);
 
   useEffect(() => {
-    // if(!data || list.length) return;
-    if(data) {
-      dispatch(getRelatedProducts(data.category.id))
-    }
-  }, [data])
+    if (!data || !list.length) return;
 
-
+    dispatch(getRelatedProducts(data.category.id));
+  }, [data, dispatch, list.length]);
 
   return !data ? (
-    <section className='preloader'> LOADING</section>
+    <section className="preloader">Loading...</section>
   ) : (
-    <div>
+    <>
       <Product {...data} />
-      <Products products={related} amount={5} title='Related Products'/>
-    </div>
-  )
-
-}
+      <Products products={related} amount={5} title="Related products" />
+    </>
+  );
+};
 
 export default SingleProduct;
