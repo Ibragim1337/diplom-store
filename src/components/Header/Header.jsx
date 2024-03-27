@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 import styles from '../../styles/Header.module.css';
 import LOGO from '../../images/logo.svg';
-import AVATAR from '../../images/avatar.jpg';
+import AVATAR from '../../images/profilepic.jpg';
 import ICON from '../../images/searchIcon.svg';
 import HEART from '../../images/heart.svg';
 import CART from '../../images/cart.svg';
@@ -55,7 +55,7 @@ const Header = () => {
         <div className={styles.user} onClick={handleClick}>
          <div 
          className={styles.avatar}
-         style={{ backgroundImage: `url(${AVATAR})` }}
+         style={{ backgroundImage: `url(${values.avatar})` }}
           />
           <div className={styles.username}>{values.name}</div>
         </div>
