@@ -33,52 +33,57 @@ const Product = ( item ) => {
           className={styles.current}
           style={{ backgroundImage: `url(${currentImage})` }}
         />
-        <div className={styles.imagelist}>
-        {images.map((image, i) => {
-          <div
-            key={i}
-            className={styles.image}
-            style={{ backgroundImage: `url(${image})` }}
-            onClick={() => setCurrentImage(image)}
-          />
-        })}
+        <div className={styles["images-list"]}>
+          {images.map((image, i) => (
+            <div
+              key={i}
+              className={styles.image}
+              style={{ backgroundImage: `url(${image})` }}
+              onClick={() => setCurrentImage(image)}
+            />
+          ))}
         </div>
       </div>
-        <div className={styles.info}>
-          <h1 className={styles.title}>{title}</h1>
-          <div className={styles.price}>{price}</div>
-          <div className={styles.color}>
-            <span>Color:</span>Green
+      <div className={styles.info}>
+        <h1 className={styles.title}>{title}</h1>
+        <div className={styles.price}>{price}$</div>
+        <div className={styles.sizes}>
+          <span>Sizes:</span>
+
+          <div className={styles.list}>
+            {SIZES.map((size) => (
+              <div
+                onClick={() => setCurrentSize(size)}
+                className={`${styles.size} ${
+                  currentSize === size ? styles.active : ""
+                }`}
+                key={size}
+              >
+                {size}
+              </div>
+            ))}
           </div>
-          <div className={styles.sizes}>
-            <span>Sizes:</span>
-            <div className={styles.list}>
-                {SIZES.map(size => (
-                  <div 
-                  onClick={() => setCurrentSize(size)} 
-                  className={`${styles.size} ${currentSize === size ? styles.active : ''}`}
-                  key={size}
-                  >
-                    {size}
-                  </div>
-                ))}
-            </div>
-          </div>
-
-          <p className={styles.description}>{description}</p>
-
-          <div className={styles.actions}>
-            <button className={styles.add} disabled={!currentSize} onClick={addToCart}>Add to cart</button>
-            <button className={styles.favorite} onClick={addItemToFavorites}>Add to favorite</button>
-          </div>
-          <div className={styles.bottom}>
-            <div className={styles.purchase}> 12 people purchased</div>
-
-              <Link to={ROUTES.HOME} >Return to store</Link>
-
-          </div>
-
         </div>
+
+        <p className={styles.description}>{description}</p>
+
+        <div className={styles.actions}>
+          <button
+            onClick={addToCart}
+            className={styles.add}
+            disabled={!currentSize}
+          >
+            Add to cart
+          </button>
+          <button className={styles.favourite}>Add to favourites</button>
+        </div>
+
+        <div className={styles.bottom}>
+          <div className={styles.purchase}>19 people purchased</div>
+
+          <Link to={ROUTES.HOME}>Return to store</Link>
+        </div>
+      </div>
     </section>
   );
 };
