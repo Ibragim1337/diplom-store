@@ -8,83 +8,98 @@ import { createUser } from "../../features/user/userSlice";
 
 const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
   const dispatch = useDispatch();
-
   const [values, setValues] = useState({
-    name:'',
-    email: '',
-    password: ''
+    name: "",
+    email: "",
+    password: "",
+    avatar: "",
   });
 
-  const handleChange = ({ target: {value, name}}) => {
-    setValues({ ...values, [name]: value})
-  }
+  const handleChange = ({ target: { value, name } }) => {
+    setValues({ ...values, [name]: value });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const isEmpty = Object.values(values).some((val)=> !val);
+    const isNotEmpty = Object.values(values).every((val) => val);
 
-    if(isEmpty) return;
+    if (!isNotEmpty) return;
 
     dispatch(createUser(values));
     closeForm();
-  } 
+  };
 
-    return(
-      <div className={styles.wrapper}>
-        <div className={styles.close} onClick={closeForm}>
-          <img src={CLOSE} />
-        </div>
-
-        <div className={styles.title}>
-          Sign Up
-        </div>
-
-        <form action="" className={styles.form} onSubmit={handleSubmit}>
-          <div className={styles.group}>
-            <input 
-            type="email" 
-            name="email" 
-            placeholder="Your email" 
-            value={values.email} 
-            autoComplete="off" 
-            onChange={handleChange}
-            required/>
-          </div>
-
-          <div className={styles.group}>
-            <input 
-            type="text" 
-            name="name" 
-            placeholder="Your name" 
-            value={values.name}  
-            autoComplete="off" 
-            onChange={handleChange}
-            required/>
-          </div>
-
-          <div className={styles.group}>
-            <input 
-            type="password" 
-            name="password" 
-            placeholder="Your password" 
-            value={values.password} 
-            autoComplete="off" 
-            onChange={handleChange}
-            required/>
-          </div>
-
-          <div className={styles.link} onClick={() => toggleCurrentFormType('login')}>
-            I already have an account
-          </div>
-
-          <button type="submit"
-          className={styles.submit}>
-            Create an account
-          </button>
-        </form>
+  return (
+    <div className={styles.wrapper}>
+      <div className={styles.close} onClick={closeForm}>
+        <img src={CLOSE} alt="" />
       </div>
-    )
-}
+
+      <div className={styles.title}>Sign Up</div>
+
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.group}>
+          <input
+            type="email"
+            placeholder="Your email"
+            name="email"
+            value={values.email}
+            autoComplete="off"
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className={styles.group}>
+          <input
+            type="name"
+            placeholder="Your name"
+            name="name"
+            value={values.name}
+            autoComplete="off"
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className={styles.group}>
+          <input
+            type="password"
+            placeholder="Your password"
+            name="password"
+            value={values.password}
+            autoComplete="off"
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div className={styles.group}>
+          <input
+            type="avatar"
+            placeholder="Your avatar"
+            name="avatar"
+            value={values.avatar}
+            autoComplete="off"
+            onChange={handleChange}
+            required
+          />
+        </div>
+
+        <div
+          className={styles.link}
+          onClick={() => toggleCurrentFormType("login")}
+        >
+          I already have an account
+        </div>
+
+        <button type="submit" className={styles.submit}>
+          Create an account
+        </button>
+      </form>
+    </div>
+  );
+};
 
 export default UserSignupForm;

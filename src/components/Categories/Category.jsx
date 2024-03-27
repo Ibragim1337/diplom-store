@@ -38,6 +38,7 @@ const Category = () => {
     setItems([]);
     setEnd(false);
     setParams({ ...defaultParams, categoryId: id });
+  
   }, [id]);
 
   useEffect(() => {

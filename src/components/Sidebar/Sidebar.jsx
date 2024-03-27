@@ -36,8 +36,7 @@ const Sidebar = () => {
           Help{" "}
         </a>
         <a
-          href="/terms"
-          target="_blank"
+          href="#"
           className={styles.link}
           style={{ textDecoration: "underline" }}
         >
