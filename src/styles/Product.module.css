@@ -4,7 +4,7 @@
   max-width: calc(100% - 324px);
   padding: 24px;
   column-gap: 32px;
-  color: var(--light);
+  color: #f6f6f7;
 }
 
 .info {
@@ -73,7 +73,7 @@
 .sizes span {
   font-size: 14px;
   line-height: 17px;
-  color: var(--dark-sea);
+  color: #576067;
 }
 
 .list {
@@ -85,20 +85,20 @@
 .size {
   padding: 4px 8px;
   border-radius: 8px;
-  background: var(--bg);
+  background: #212123;
   cursor: pointer;
 }
 
 .size:hover,
 .size.active {
-  background: var(--violet);
+  background: #8b57c6;
 }
 
 .description {
   font-weight: 400;
   font-size: 12px;
   line-height: 15px;
-  color: var(--grey);
+  color: #b8b8b8;
 }
 
 .actions {
@@ -108,7 +108,7 @@
 }
 
 .favourite {
-  background: var(--dark-sea);
+  background: #576067;
   border-radius: 6px;
 }
 
@@ -122,11 +122,11 @@
   justify-content: space-between;
   font-size: 10px;
   line-height: 12px;
-  color: var(--dark-sea);
+  color: #576067;
   margin-top: auto;
 }
 
 .add:disabled {
   cursor: not-allowed;
-  background: var(--bg);
+  background: #212123;
 }
