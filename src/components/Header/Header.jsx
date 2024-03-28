@@ -103,9 +103,9 @@ const Header = () => {
 
         
         <div className={styles.account}>
-          <Link to={ROUTES.HOME} className={styles.favorites}>
+          {/* <Link to={ROUTES.HOME} className={styles.favorites}>
             <img src={HEART} alt="heart logo" className={styles.heart}/>
-          </Link>
+          </Link> */}
 
           <Link to={ROUTES.CART} className={styles.cart}>
             <img src={CART} alt="heart logo" className={styles.cartLogo}/>

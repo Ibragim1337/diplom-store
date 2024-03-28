@@ -14,7 +14,7 @@ const Poster = () => {
         <div className={styles.text}>
           <div className={styles.subtitles}>THE BEST SELLER OF 2024</div>
           <h1 className={styles.head}>LENNON r2d2 with NVIDIA RTX 5090 TI</h1>
-          <button className={styles.button}>Shop now</button>
+          {/* <button className={styles.button}>Shop now</button> */}
         </div>
         <div className={styles.imageContainer}>
           <img src={COMPUTER} alt="" />

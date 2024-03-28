@@ -5,7 +5,7 @@ import { ROUTES } from "../../utils/routes";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../features/user/userSlice";
 
-const SIZES = [ 7.5, 8, 11];
+const SIZES = [ 'S', 'L', 'XL'];
 
 const Product = ( item ) => {
 
@@ -75,7 +75,7 @@ const Product = ( item ) => {
           >
             Add to cart
           </button>
-          <button className={styles.favourite}>Add to favourites</button>
+          {/* <button className={styles.favourite}>Add to favourites</button> */}
         </div>
 
         <div className={styles.bottom}>
