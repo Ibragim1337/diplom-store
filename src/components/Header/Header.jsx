@@ -4,7 +4,6 @@ import styles from '../../styles/Header.module.css';
 import LOGO from '../../images/logo.svg';
 import AVATAR from '../../images/profilepic.jpg';
 import ICON from '../../images/searchIcon.svg';
-import HEART from '../../images/heart.svg';
 import CART from '../../images/cart.svg';
 
 
