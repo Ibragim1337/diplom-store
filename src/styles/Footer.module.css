@@ -27,3 +27,17 @@
   height: 24px;
   fill: #576067;
 }
+
+.link {
+  color: #576067;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: capitalize;
+}
+
+
+.help {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}

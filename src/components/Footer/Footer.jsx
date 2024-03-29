@@ -19,6 +19,17 @@ const Footer = () => {
           <img src={LOGO} alt="stuff logo" />
         </Link>
       </div>
+      <div className={styles.help}>
+        <div href="#" className={styles.link}>
+          Help
+        </div>
+        <div
+          href="#"
+          className={styles.link}
+        >
+          Term and Conditions
+        </div>
+      </div>
 
       <div className={styles.rights}>
         Developed by Ibragim

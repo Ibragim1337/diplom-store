@@ -30,20 +30,7 @@ const Sidebar = () => {
         </ul>
       </nav>
 
-      <div className={styles.footer}>
-        <a href="#" className={styles.link}>
-          {" "}
-          Help{" "}
-        </a>
-        <a
-          href="#"
-          className={styles.link}
-          style={{ textDecoration: "underline" }}
-        >
-          {" "}
-          Term and Conditions{" "}
-        </a>
-      </div>
+      
     </section>
   );
 };
