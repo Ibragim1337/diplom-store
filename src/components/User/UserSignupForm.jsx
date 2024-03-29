@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 
-import styles from '../../styles/User.module.css';
+import styles from "../../styles/User.module.css";
 
-import CLOSE from '../../images/x-symbol-svgrepo-com.svg';
+import CLOSE from "../../images/x-symbol-svgrepo-com.svg";
 import { useDispatch } from "react-redux";
 import { createUser } from "../../features/user/userSlice";
 
@@ -16,7 +16,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
   });
 
   const handleChange = ({ target: { value, name } }) => {
-    if (name === 'name') {
+    if (name === "name") {
       // Проверяем, если введенное имя длиннее 12 символов, обрезаем его
       const trimmedValue = value.slice(0, 12);
       setValues({ ...values, [name]: trimmedValue });
@@ -76,6 +76,7 @@ const UserSignupForm = ({ toggleCurrentFormType, closeForm }) => {
             name="password"
             value={values.password}
             autoComplete="off"
+            minLength="5"
             onChange={handleChange}
             required
           />

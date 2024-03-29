@@ -24,7 +24,6 @@ const Profile = () => {
 
   const handleChange = ({ target: { value, name } }) => {
     if (name === 'name') {
-      // Проверяем, если введенное имя длиннее 12 символов, обрезаем его
       const trimmedValue = value.slice(0, 12);
       setValues({ ...values, [name]: trimmedValue });
     } else {
@@ -80,6 +79,7 @@ const Profile = () => {
               value={values.password}
               autoComplete="off"
               onChange={handleChange}
+              minLength="5"
               required
             />
           </div>
