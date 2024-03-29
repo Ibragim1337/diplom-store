@@ -12,10 +12,18 @@ import { ROUTES } from "../../utils/routes";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+
+  const handleClick = () => {
+    const wrapper = document.querySelector(`body`);
+    if (wrapper) {
+      wrapper.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className={styles.footer}>
       <div className={styles.logo}>
-        <Link to={ROUTES.HOME}>
+        <Link to={ROUTES.HOME} onClick={handleClick}>
           <img src={LOGO} alt="stuff logo" />
         </Link>
       </div>
