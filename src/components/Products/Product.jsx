@@ -5,7 +5,6 @@ import { ROUTES } from "../../utils/routes";
 import { useDispatch } from "react-redux";
 import { addItemToCart } from "../../features/user/userSlice";
 
-const SIZES = [ 'S', 'L', 'XL'];
 
 const Product = ( item ) => {
 
@@ -47,24 +46,6 @@ const Product = ( item ) => {
       <div className={styles.info}>
         <h1 className={styles.title}>{title}</h1>
         <div className={styles.price}>{price}$</div>
-        <div className={styles.sizes}>
-          <span>Sizes:</span>
-
-          <div className={styles.list}>
-            {SIZES.map((size) => (
-              <div
-                onClick={() => setCurrentSize(size)}
-                className={`${styles.size} ${
-                  currentSize === size ? styles.active : ""
-                }`}
-                key={size}
-              >
-                {size}
-              </div>
-            ))}
-          </div>
-        </div>
-
         <p className={styles.description}>{description}</p>
 
         <div className={styles.actions}>
