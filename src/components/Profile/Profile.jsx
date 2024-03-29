@@ -23,7 +23,13 @@ const Profile = () => {
   }, [currentUser]);
 
   const handleChange = ({ target: { value, name } }) => {
-    setValues({ ...values, [name]: value });
+    if (name === 'name') {
+      // Проверяем, если введенное имя длиннее 12 символов, обрезаем его
+      const trimmedValue = value.slice(0, 12);
+      setValues({ ...values, [name]: trimmedValue });
+    } else {
+      setValues({ ...values, [name]: value });
+    }
   };
 
   const handleSubmit = (e) => {

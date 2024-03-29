@@ -21,6 +21,7 @@
   align-items: center;
   column-gap: 10px;
   cursor: pointer;
+  width: 200px;
 }
 
 .username {
