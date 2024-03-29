@@ -63,7 +63,13 @@ const Category = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
+  
+    
+    if (values.price_min > values.price_max) {
+      alert('minimum price cannot be higher');
+      return;
+    }
+  
     setItems([]);
     setEnd(false);
     setParams({ ...defaultParams, ...values });
