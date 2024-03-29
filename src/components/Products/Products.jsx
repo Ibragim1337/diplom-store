@@ -14,7 +14,7 @@ const Products = ({title, style={}, products = [], amount}) => {
       <div className={styles.list}>
       {list.map(({id, images, title, category: {name: cat}, price}) => (
         <Link to={`/products/${id}`} key={id} className={styles.product}>
-          <div className={styles.image} style={{backgroundImage: `url(${images[1]})`  }}/>
+          <div className={styles.image} style={{backgroundImage: `url(${images[0]})`  }}/>
 
           <div className={styles.wrapper}>
             <h3 className={styles.title}>{title}</h3>
@@ -24,10 +24,6 @@ const Products = ({title, style={}, products = [], amount}) => {
                 <div className={styles.price}>{price}$</div>
                 <div className={styles.oldPrice}>{Math.floor(price * 1.2)}$
                 </div>
-              </div>
-
-              <div className={styles.purchases}>
-                {Math.floor(Math.random() * 20 + 1)} purchased
               </div>
             </div>
           </div>
