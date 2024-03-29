@@ -57,7 +57,7 @@ const Header = () => {
           <div className={styles.username}>{values.name}</div>
         </div>
 
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={e => e.preventDefault()}>
         <div className={styles.icon}>
           <img 
           className={styles.searchIcon}
