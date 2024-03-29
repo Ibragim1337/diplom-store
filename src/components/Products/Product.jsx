@@ -11,7 +11,6 @@ const Product = ( item ) => {
   const { title, price, images, description } = item;
 
   const [currentImage, setCurrentImage] = useState();
-  const [currentSize, setCurrentSize] = useState();
 
   const dispatch = useDispatch();
 
@@ -52,7 +51,6 @@ const Product = ( item ) => {
           <button
             onClick={addToCart}
             className={styles.add}
-            disabled={!currentSize}
           >
             Add to cart
           </button>
